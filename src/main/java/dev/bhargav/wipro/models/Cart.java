@@ -1,5 +1,9 @@
 package dev.bhargav.wipro.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +15,10 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Cart {
-    private int cart_id;
+    @Id
+    private int id;
+    @ManyToMany
     private List<LineItem> items;
 }
